@@ -17,3 +17,6 @@ Jesper Larsson Tr¨af
 
 https://preshing.com/20120913/acquire-and-release-semantics/
 Acquire and Release Semantics
+
+cross compiler
+$ arm-linux-gnueabihf-gcc -o hello_arm hello.c 
