@@ -9,6 +9,7 @@ git pull した情報は header 情報に対して consistent である。最新
 
 
 References
+
 https://arxiv.org/pdf/1803.04432.pdf
 Memory Models for C/C++ Programmers
 Manuel P¨oter
