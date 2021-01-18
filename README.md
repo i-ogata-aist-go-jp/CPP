@@ -18,15 +18,31 @@ header を読み取り、ファイルの変更を repository から読み出す�
 git pull した情報は header 情報に対して consistent である。最新ではなくても、 consistent であることが重要。
 
 
-References
+（References）
+
+C/C++11 mappings to processors 
+https://www.cl.cam.ac.uk/~pes20/cpp/cpp0xmappings.html
+
+x86 (including x86-64)
+Store Relaxed:	MOV (into memory)
+Store Release:	MOV (into memory)
+
+AArch64
+Store Relaxed:	STR
+Store Release:	STLR
+
+（References）
 
 https://arxiv.org/pdf/1803.04432.pdf
 Memory Models for C/C++ Programmers
 Manuel P¨oter
 Jesper Larsson Tr¨af
 
+（References）
+
 https://preshing.com/20120913/acquire-and-release-semantics/
 Acquire and Release Semantics
 
+（memo）
 cross compiler
 $ arm-linux-gnueabihf-gcc -o hello_arm hello.c 
