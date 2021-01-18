@@ -1,5 +1,15 @@
 # CPP
 
+（Rosseta 2 は速い）
+Apple silicon M1 は　TSMC 5nm /  160億トランジスタ / 119mm^2 で製造されている。 four high-performance Firestorm and four energy-efficient Icestorm cores を持つ。
+firestorm core は　 8-wide decode out-of-order である。
+intel X86 の store 命令である MOV は in-order で実行される。対して ARMv8 の STR 命令は out-of-order である。ARMv8 は Aqure Release semantics で設計されており STRL store register reLease と  LDRA load register acquire を持つ。つまり x86 MOV は ARMv8 STR　には翻訳できない。
+そこで apple silicon M1 ではハードウェア的に STR が in-order で実行されるモード（＝intel互換モード）を実装した。
+
+
+
+（Acquire Release Semantics について）
+
 store release = git push  、  load acquire = git pull というアナロジーは有用である。
 
 store release 　STRL で書き出され  load acquire　LDRA で読みだされる「フラッグ」は  git の header に相当し、それ以外で  store / load されるものはデータ（ファイル）に相当する。
