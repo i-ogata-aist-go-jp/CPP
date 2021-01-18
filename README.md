@@ -24,10 +24,14 @@ C/C++11 mappings to processors
 https://www.cl.cam.ac.uk/~pes20/cpp/cpp0xmappings.html
 
 x86 (including x86-64)
+Load Relaxed:	MOV (from memory)
+Load Acquire:	MOV (from memory)
 Store Relaxed:	MOV (into memory)
 Store Release:	MOV (into memory)
 
 AArch64
+Load Relaxed:	LDR
+Load Acquire:	LDAR
 Store Relaxed:	STR
 Store Release:	STLR
 
