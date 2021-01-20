@@ -6,9 +6,12 @@ firestorm core は　 8-wide decode out-of-order である。
 intel X86 の store 命令である MOV は in-order で実行される。対して ARMv8 の STR 命令は out-of-order である。ARMv8 は Aqure Release semantics で設計されており STRL store register reLease と  LDRA load register acquire を持つ。つまり x86 MOV は ARMv8 STR　には翻訳できない。
 そこで apple silicon M1 ではハードウェア的に STR が in-order で実行されるモード（＝intel互換モード）を実装した。
 
-
-
 （Acquire Release Semantics について）
+
+All operations following an acquire in program order also following it in global memory order
+All operations preceding a release in program order also precede it in global memory order
+A release that precedes an acquire in program order also precedes it in global memory order
+
 
 store release = git push  、  load acquire = git pull というアナロジーは有用である。
 
