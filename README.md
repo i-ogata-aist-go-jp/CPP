@@ -17,6 +17,12 @@ store release 　STRL で書き出され  load acquire　LDRA で読みだされ
 header を読み取り、ファイルの変更を repository から読み出すのが git pull である。
 git pull した情報は header 情報に対して consistent である。最新ではなくても、 consistent であることが重要。
 
+(Reference)
+
+RISC-V Weak Memory Ordering (“RVWMO”)
+Dan Lustig
+
+https://riscv.org/wp-content/uploads/2018/05/14.25-15.00-RISCVMemoryModelTutorial.pdf
 
 （References）
 
