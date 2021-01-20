@@ -8,8 +8,11 @@ intel X86 の store 命令である MOV は in-order で実行される。対し
 
 （Acquire Release Semantics について）
 
+(RCsc maintains sequential consistency among special operations)
 All operations following an acquire in program order also following it in global memory order
+
 All operations preceding a release in program order also precede it in global memory order
+
 A release that precedes an acquire in program order also precedes it in global memory order
 
 
