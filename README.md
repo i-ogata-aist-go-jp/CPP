@@ -6,9 +6,16 @@ firestorm core は　 8-wide decode out-of-order である。
 intel X86 の store 命令である MOV は in-order で実行される。対して ARMv8 の STR 命令は out-of-order である。ARMv8 は Aqure Release semantics で設計されており STRL store register reLease と  LDRA load register acquire を持つ。つまり x86 MOV は ARMv8 STR　には翻訳できない。
 そこで apple silicon M1 ではハードウェア的に STR が in-order で実行されるモード（＝intel互換モード）を実装した。
 
-
-
 （Acquire Release Semantics について）
+
+(RCsc maintains sequential consistency among special operations)
+
+All operations following an acquire in program order also following it in global memory order
+
+All operations preceding a release in program order also precede it in global memory order
+
+A release that precedes an acquire in program order also precedes it in global memory order
+
 
 store release = git push  、  load acquire = git pull というアナロジーは有用である。
 
@@ -17,6 +24,12 @@ store release 　STRL で書き出され  load acquire　LDRA で読みだされ
 header を読み取り、ファイルの変更を repository から読み出すのが git pull である。
 git pull した情報は header 情報に対して consistent である。最新ではなくても、 consistent であることが重要。
 
+(Reference)
+
+RISC-V Weak Memory Ordering (“RVWMO”)
+Dan Lustig
+
+https://riscv.org/wp-content/uploads/2018/05/14.25-15.00-RISCVMemoryModelTutorial.pdf
 
 （References）
 
